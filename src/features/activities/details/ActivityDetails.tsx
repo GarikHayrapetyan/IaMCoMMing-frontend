@@ -19,11 +19,15 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailParam>> = ({match,hist
 
   useEffect(() => {
     loadActivity(match.params.id);
-  },[loadActivity,match.params.id])
+  },[loadActivity,match.params.id,history])
 
-  if (loadingInitial || !activity) {
-    console.log("ActivitY:"+activity);
+  if (loadingInitial) {
+    console.log("Activity:"+activity);
     return <LoadingComponent content='Loading activity...'/>
+  }
+
+  if(!activity){
+    return <h1>Activity Not found</h1>
   }
 
     return (

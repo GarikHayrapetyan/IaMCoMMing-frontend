@@ -5,7 +5,7 @@ import { IActivity } from '../../../app/models/activity'
 
 export const ActivityListItem:React.FC<{activity:IActivity}> = ({activity}) => {
   return (
-    <Segment.Group>
+    <Segment.Group key={activity.id}>
       <Segment>
         <Item.Group>
           <Item>

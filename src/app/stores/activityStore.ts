@@ -41,14 +41,14 @@ class ActivityStore {
 
         this.loadingInitial = false;
       })
-     console.log(this.groupActivitiesByDate(activities));
+     //console.log(this.groupActivitiesByDate(activities));
      
 
     } catch (error) {
       runInAction(()=>{
         this.loadingInitial = false;
       })
-      console.log(error);
+      //console.log(error);
     }
 
   }
@@ -69,6 +69,7 @@ class ActivityStore {
           this.loadingInitial=false
         });
         console.log(error);        
+        throw error;
       }
       
     }
